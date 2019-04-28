@@ -1,4 +1,4 @@
-package com.myfinancialstory.irufino.myfinancialstory.feature
+package com.myfinancialstory.feature
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.myfinancialstory.irufino.myfinancialstory.feature", appContext.packageName)
+        assertEquals("com.myfinancialstory.feature.test", appContext.packageName)
     }
 }

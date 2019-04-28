@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.myfinancialstory.irufino.myfinancialstory.app"
+        applicationId "com.myfinancialstory.myfinancialstory"
         minSdkVersion 26
         targetSdkVersion 28
         versionCode 1
@@ -27,4 +27,7 @@ android {
 dependencies {
     implementation project(':feature')
     implementation project(':base')
+    implementation 'com.google.firebase:firebase-core:16.0.8'
 }
+
+apply plugin: 'com.google.gms.google-services'

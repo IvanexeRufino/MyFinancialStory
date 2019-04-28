@@ -1,4 +1,4 @@
-package com.myfinancialstory.irufino.myfinancialstory.feature.localstorage
+package com.myfinancialstory.feature.localstorage
 
 import android.app.Activity
 import android.content.Context

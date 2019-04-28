@@ -1,11 +1,11 @@
-package com.myfinancialstory.irufino.myfinancialstory.feature.home
+package com.myfinancialstory.feature.home
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.myfinancialstory.irufino.myfinancialstory.feature.R
+import com.myfinancialstory.feature.R
 
 class HomeFragment : Fragment() {
 

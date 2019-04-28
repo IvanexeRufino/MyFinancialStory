@@ -1,7 +1,7 @@
-package com.myfinancialstory.irufino.myfinancialstory.feature.session
+package com.myfinancialstory.feature.session
 
 import android.app.Activity
-import com.myfinancialstory.irufino.myfinancialstory.feature.localstorage.LocalStorageManager
+import com.myfinancialstory.feature.localstorage.LocalStorageManager
 import java.util.*
 
 class SessionHandler(activity: Activity) {

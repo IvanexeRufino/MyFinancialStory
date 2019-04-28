@@ -1,4 +1,4 @@
-package com.myfinancialstory.irufino.myfinancialstory.feature
+package com.myfinancialstory.feature
 
 import org.junit.Test
 

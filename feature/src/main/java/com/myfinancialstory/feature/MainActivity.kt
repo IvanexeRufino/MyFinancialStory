@@ -1,4 +1,4 @@
-package com.myfinancialstory.irufino.myfinancialstory.feature
+package com.myfinancialstory.feature
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,11 +6,11 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
-import com.myfinancialstory.irufino.myfinancialstory.feature.dashboard.DashboardFragment
-import com.myfinancialstory.irufino.myfinancialstory.feature.home.HomeFragment
-import com.myfinancialstory.irufino.myfinancialstory.feature.mystory.MyStoryFragment
-import com.myfinancialstory.irufino.myfinancialstory.feature.session.LoginActivity
-import com.myfinancialstory.irufino.myfinancialstory.feature.session.SessionHandler
+import com.myfinancialstory.feature.dashboard.DashboardFragment
+import com.myfinancialstory.feature.home.HomeFragment
+import com.myfinancialstory.feature.mystory.MyStoryFragment
+import com.myfinancialstory.feature.session.LoginActivity
+import com.myfinancialstory.feature.session.SessionHandler
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
