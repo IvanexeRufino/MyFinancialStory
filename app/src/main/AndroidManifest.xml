@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mylifemobile">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application>
         <activity
             android:theme="@style/AppTheme"
@@ -18,5 +20,4 @@
                 android:label="@string/app_name">
         </activity>
     </application>
-
 </manifest>
