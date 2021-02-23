@@ -11,13 +11,14 @@ import com.mylifemobile.home.HomeFragment
 import com.mylifemobile.mystory.MyStoryFragment
 import com.mylifemobile.session.LoginActivity
 import com.mylifemobile.session.SessionHandler
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var sessionHandler: SessionHandler
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        val navigation = findViewById<BottomNavigationView>(R.id.navigation)
         if (item.itemId == navigation.selectedItemId) return@OnNavigationItemSelectedListener false
 
         when (item.itemId) {
@@ -44,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         if (sessionHandler.isUserLogged()) {
             setContentView(R.layout.activity_main)
 
-            val navigation = findViewById<BottomNavigationView>(R.id.navigation)
             navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
             showAnimatedFragment(HomeFragment())
