@@ -1,1 +1,2 @@
-include ':feature', ':app', ':base', ':instantapp'
+include ':app'
+rootProject.name = "My-life-mobile"
