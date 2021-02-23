@@ -10,6 +10,7 @@
     <string name="login_user">User</string>
     <string name="login_password">Password</string>
     <string name="login_action">Log in</string>
+    <string name="register_action">Register</string>
     <string name="login_required_fields">Please complete all obligatory fields: User and Password</string>
 
 
