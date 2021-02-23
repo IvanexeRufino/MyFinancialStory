@@ -11,4 +11,11 @@
     <string name="login_password">Password</string>
     <string name="login_action">Log in</string>
     <string name="login_required_fields">Please complete all obligatory fields: User and Password</string>
+
+
+    <string name="expenses_successful_add">Your expense has been added</string>
+    <string name="expenses_required_fields">Please add a value to the expense</string>
+    <string name="expense_value_hint">Expense value</string>
+    <string name="add_expenses_label">Add an expense</string>
+    <string name="add_expenses_button">Add expense</string>
 </resources>
