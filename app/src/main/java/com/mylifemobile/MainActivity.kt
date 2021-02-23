@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mylifemobile.dashboard.DashboardFragment
 import com.mylifemobile.home.HomeFragment
-import com.mylifemobile.mystory.MyStoryFragment
+import com.mylifemobile.mystory.MyExpensesFragment
 import com.mylifemobile.session.LoginActivity
 import com.mylifemobile.session.SessionHandler
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_expenses -> {
-                showAnimatedFragment(MyStoryFragment())
+                showAnimatedFragment(MyExpensesFragment())
                 return@OnNavigationItemSelectedListener true
             }
         }
