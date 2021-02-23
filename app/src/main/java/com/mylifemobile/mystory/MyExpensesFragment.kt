@@ -11,12 +11,14 @@ import androidx.fragment.app.Fragment
 import com.mylifemobile.R
 import com.mylifemobile.api.RestClientManager
 import com.mylifemobile.api.model.ExpensesModel
+import com.mylifemobile.session.SessionHandler
 import org.jetbrains.anko.doAsync
 import java.util.*
 
 class MyExpensesFragment : Fragment() {
 
     private val restClient: RestClientManager = RestClientManager()
+    private lateinit var sessionHandler: SessionHandler
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.expenses_tab, container, false)
@@ -29,7 +31,7 @@ class MyExpensesFragment : Fragment() {
                 doAsync {
                     val expense = ExpensesModel(amount = amountInput.toInt(),
                                                 categoryId = 1,
-                                                userId = 1,
+                                                userId = sessionHandler.getUserId(),
                                                 date = Date())
                     restClient.createExpense(expense)
                 }
