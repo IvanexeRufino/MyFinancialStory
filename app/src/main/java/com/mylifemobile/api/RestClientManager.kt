@@ -1,5 +1,6 @@
 package com.mylifemobile.api
 
+import com.mylifemobile.api.model.CategoryModel
 import com.mylifemobile.api.model.ExpensesModel
 import com.mylifemobile.api.model.UserModel
 import retrofit2.Retrofit
@@ -23,5 +24,10 @@ class RestClientManager {
     fun createUser(user: UserModel): UserModel {
         val response = restClient.createUser(user).execute()
         return response.body() as UserModel
+    }
+
+    fun getCategories(): List<CategoryModel> {
+        val response = restClient.getCategories().execute()
+        return response.body() as List<CategoryModel>
     }
 }

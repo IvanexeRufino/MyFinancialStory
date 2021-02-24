@@ -18,5 +18,7 @@
     <string name="expenses_required_fields">Please add a value to the expense</string>
     <string name="expense_value_hint">Expense value</string>
     <string name="add_expenses_label">Add an expense</string>
+    <string name="add_expenses_amount">Amount: </string>
+    <string name="add_expenses_category">Select a category</string>
     <string name="add_expenses_button">Add expense</string>
 </resources>

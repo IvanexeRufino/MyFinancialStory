@@ -12,25 +12,57 @@
             android:id="@+id/add_expenses_label"
             android:layout_width="139dp"
             android:layout_height="35dp"
-            android:layout_marginTop="228dp"
+            android:layout_marginTop="44dp"
             android:text="@string/add_expenses_label"
             android:textSize="18sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textAlignment="center"
-            android:layout_marginStart="136dp" />
+            android:layout_marginStart="16dp" />
+
+    <TextView
+            android:id="@+id/add_expenses_amount_label"
+            android:layout_width="112dp"
+            android:layout_height="38dp"
+            android:text="@string/add_expenses_amount"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="@+id/add_expenses_label"
+            app:layout_constraintTop_toBottomOf="@+id/add_expenses_label"
+            android:layout_marginTop="52dp" />
 
     <EditText
             android:id="@+id/add_expenses_input"
             android:layout_width="162dp"
             android:layout_height="48dp"
             android:inputType="numberDecimal"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:autofillHints=""
             android:hint="@string/expense_value_hint"
-            app:layout_constraintTop_toBottomOf="@+id/add_expenses_label"
+            app:layout_constraintTop_toTopOf="@+id/add_expenses_amount_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" />
+
+    <TextView
+            android:id="@+id/add_expenses_category_label"
+            android:layout_width="177dp"
+            android:layout_height="41dp"
+            android:text="@string/add_expenses_category"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="@+id/add_expenses_amount_label"
+            app:layout_constraintTop_toBottomOf="@+id/add_expenses_amount_label"
+            android:layout_marginTop="72dp" />
+
+    <Spinner
+            android:layout_width="202dp"
+            android:layout_height="37dp"
+            android:id="@+id/add_expenses_category_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/add_expenses_category_label"
             android:layout_marginTop="24dp"
-            android:layout_marginStart="124dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" />
 
     <Button
             android:id="@+id/add_expenses_button"
