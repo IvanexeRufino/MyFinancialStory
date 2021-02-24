@@ -8,6 +8,7 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import com.mylifemobile.R
 import com.mylifemobile.api.RestClientManager
+import com.mylifemobile.api.model.CategoryModel
 import com.mylifemobile.api.model.ExpensesModel
 import com.mylifemobile.session.SessionHandler
 import org.jetbrains.anko.doAsync
@@ -18,6 +19,7 @@ class MyExpensesFragment : Fragment() {
 
     private val restClient: RestClientManager = RestClientManager()
     private lateinit var sessionHandler: SessionHandler
+    private lateinit var categories: List<CategoryModel>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,12 +40,20 @@ class MyExpensesFragment : Fragment() {
 
         expensesButton.setOnClickListener {
             val amountInput = view.findViewById<EditText>(R.id.add_expenses_input).text.toString()
+            val categoryName = view.findViewById<Spinner>(R.id.add_expenses_category_spinner).selectedItem
+            var categoryId = -1
 
-            if (amountInput != "") {
+            categories.forEach { categoryModel ->
+                if(categoryModel.name == categoryName) {
+                   categoryId = categoryModel.id
+                }
+            }
+
+            if (amountInput != "" && categoryId != -1) {
                 doAsync {
                     val expense = ExpensesModel(
                         amount = amountInput.toInt(),
-                        categoryId = 1,
+                        categoryId = categoryId,
                         userId = sessionHandler.getUserId(),
                         date = Date()
                     )
@@ -59,10 +69,12 @@ class MyExpensesFragment : Fragment() {
         doAsync {
             val spinner = view.findViewById<Spinner>(R.id.add_expenses_category_spinner)
 
-            val categories = restClient.getCategories().map { categoryModel -> categoryModel.name }
+            categories = restClient.getCategories()
+
+            val categoriesName = categories.map { categoryModel -> categoryModel.name }
             val adapter: ArrayAdapter<String> = ArrayAdapter(
                 requireContext(),
-                android.R.layout.simple_spinner_item, categories
+                android.R.layout.simple_spinner_item, categoriesName
             )
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
