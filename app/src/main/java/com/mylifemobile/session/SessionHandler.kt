@@ -12,12 +12,11 @@ class SessionHandler(activity: Activity) {
         return localStorage.getSessionId() != ""
     }
 
-    fun createSession() {
-        return localStorage.setSessionId(UUID.randomUUID().toString())
+    fun createSession(userId: Int) {
+        return localStorage.setSessionId(UUID.randomUUID().toString(), userId)
     }
 
-    fun isValidSession(session: String): Boolean {
-        return localStorage.getSessionId() == session
+    fun getUserId(): Int {
+        return localStorage.getUserId()
     }
-
 }
