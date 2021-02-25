@@ -43,7 +43,7 @@ class MyExpensesFragment : Fragment() {
     private fun fillTypesSpinner(view: View) {
         val spinner = view.findViewById<Spinner>(R.id.add_transactions_type_spinner)
 
-        val types = arrayOf("Ingreso", "Egreso")
+        val types = arrayListOf<String>("", "Ingreso", "Egreso")
         val adapter: ArrayAdapter<String> = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_spinner_item, types
@@ -51,15 +51,13 @@ class MyExpensesFragment : Fragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
         spinner.onItemSelectedListener = object : OnItemSelectedListener {
-            var flag = false
 
             override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View,
                 position: Int, id: Long) {
-                if(flag) {
-                    type = parentView!!.getItemAtPosition(position) as String
+                if(parentView!!.getItemAtPosition(position) != "") {
+                    type = parentView.getItemAtPosition(position) as String
+                    adapter.remove("")
                     makeViewVisible()
-                } else {
-                    flag = true
                 }
             }
 
