@@ -9,10 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.mylifemobile.MainActivity
 import com.mylifemobile.R
 import com.mylifemobile.api.RestClientManager
-import com.mylifemobile.api.model.ExpensesModel
 import com.mylifemobile.api.model.UserModel
 import org.jetbrains.anko.doAsync
-import java.util.*
 
 class LoginActivity: AppCompatActivity() {
 

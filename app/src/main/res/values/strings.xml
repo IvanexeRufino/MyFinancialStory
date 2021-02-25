@@ -3,7 +3,7 @@
 
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_expenses">Expenses</string>
+    <string name="title_expenses">Transactions</string>
 
     <string name="welcome">Welcome to your story</string>
 
@@ -14,11 +14,12 @@
     <string name="login_required_fields">Please complete all obligatory fields: User and Password</string>
 
 
-    <string name="expenses_successful_add">Your expense has been added</string>
-    <string name="expenses_required_fields">Please add a value to the expense</string>
-    <string name="expense_value_hint">Expense value</string>
-    <string name="add_expenses_label">Add an expense</string>
-    <string name="add_expenses_amount">Amount: </string>
-    <string name="add_expenses_category">Select a category</string>
-    <string name="add_expenses_button">Add expense</string>
+    <string name="transactions_successful_add">Your transaction has been added</string>
+    <string name="transaction_required_fields">Please add a value to the transaction</string>
+    <string name="transaction_value_hint">Transaction value</string>
+    <string name="add_transactions_label">Add a transaction</string>
+    <string name="add_transactions_type">Type: </string>
+    <string name="add_transactions_amount">Amount: </string>
+    <string name="add_transactions_category">Select a category</string>
+    <string name="add_transactions_button">Add transaction</string>
 </resources>
