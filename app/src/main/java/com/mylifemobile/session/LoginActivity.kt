@@ -33,7 +33,11 @@ class LoginActivity: AppCompatActivity() {
             val password = findViewById<EditText>(R.id.text_contraseña).text.toString()
 
             if (email != "" && password != "") {
-                goToLogin()
+                val user = UserModel(
+                    email = email,
+                    password = password
+                )
+                makeSuccessfulLogin(user)
             } else {
                 Toast.makeText(this, R.string.login_required_fields, Toast.LENGTH_LONG).show()
             }
