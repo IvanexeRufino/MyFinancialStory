@@ -1,30 +1,24 @@
 package com.mylifemobile.api
 
 import com.google.gson.GsonBuilder
+import com.mylifemobile.api.ApiWorker.restClient
 import com.mylifemobile.api.model.CategoryModel
 import com.mylifemobile.api.model.TransactionModel
 import com.mylifemobile.api.model.UserModel
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.security.KeyManagementException
-import java.security.NoSuchAlgorithmException
 
 class RestClientManager {
-
-    private val restClient: APIService =  Retrofit.Builder()
-            .baseUrl("https://my-life-api.herokuapp.com/")
-            .addConverterFactory(ApiWorker.gsonConverter)
-            .build()
-            .create(APIService::class.java)
-
 
     fun createExpense(expense: TransactionModel): Boolean {
         val response = restClient.createExpenses(expense).execute()
         val expenseCreated = response.body() as TransactionModel
 
         return expenseCreated.id != 0
+    }
+
+    fun refreshBankMovements(userID: Int) {
+        restClient.refreshBankMovements(userID).execute()
     }
 
     fun createUser(user: UserModel): UserModel {
@@ -41,6 +35,12 @@ class RestClientManager {
 
 object ApiWorker {
     private var mGsonConverter: GsonConverterFactory? = null
+
+    val restClient: APIService =  Retrofit.Builder()
+        .baseUrl("https://my-life-api.herokuapp.com/")
+        .addConverterFactory(ApiWorker.gsonConverter)
+        .build()
+        .create(APIService::class.java)
 
     val gsonConverter: GsonConverterFactory
         get() {

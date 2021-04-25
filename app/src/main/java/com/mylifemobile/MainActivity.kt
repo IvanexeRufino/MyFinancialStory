@@ -6,17 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.mylifemobile.api.RestClientManager
 import com.mylifemobile.dashboard.DashboardFragment
 import com.mylifemobile.home.HomeFragment
 import com.mylifemobile.mystory.MyExpensesFragment
 import com.mylifemobile.session.LoginActivity
 import com.mylifemobile.session.SessionHandler
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.doAsync
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var sessionHandler: SessionHandler
+    private val restClient: RestClientManager = RestClientManager()
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         if (item.itemId == navigation.selectedItemId) return@OnNavigationItemSelectedListener false
@@ -46,6 +49,10 @@ class MainActivity : AppCompatActivity() {
             setContentView(R.layout.activity_main)
 
             navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+            doAsync {
+                restClient.refreshBankMovements(sessionHandler.getUserId())
+            }
+
 
             showAnimatedFragment(HomeFragment())
         } else {
